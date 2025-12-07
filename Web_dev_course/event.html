@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validationh2</title>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    <form id="example">
+        <input type="text" id="formInput" placeholder="Enter something"/>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Dynamic Content</h2>
+    <button id="button">Add Element</button>
+    <h2>Interactive Lists</h2>
+    <ul id="lists">
+        <li>Interactive Item 1</li>
+        <li>Interactive Item 2</li>
+        <li>Interactive Item 3</li>
+    </ul>
+    <script>
+        document.querySelector("#example").addEventListener("submit", (e) => 
+    {let input = document.querySelector("#formInput");
+        if (!input.value) {
+            e.preventDefault();
+            alert("Input cannot be empty");
+        }
+    });
+    document.querySelector("#button").addEventListener('click', () =>{
+        let newDiv = document.createElement("div");
+        newDiv.textContent = "New Element Added";
+        // Inline set CSS
+        newDiv.style.margin = "10px 0";
+        document.body.appendChild(newDiv) // Add it into Html
+    });
+        let ul = document.querySelector("#lists");
+        ul.addEventListener("click", (e) => {
+            if (e.target.tagName === "LI"){ // tagName retrn the uppercase name of HTML element
+                e.target.style.backgroundColor = "yellow";
+            }
+        });
+        // EVENT LOOP // () => Anonymous function, replace funtion(){}...Likewise, parameter .... => ....
+        // or list, remaining = [...list]
+        console.log("Start");
+        setTimeout(() => { 
+            console.log("setTimeout Callback");
+            // promise is queue has highest priority // call stack run first, then microtasks(promises, mutatationobserver), last macrotasks(setTimeout)
+        Promise.resolve().then(()=>{console.log("Promise Resolved");});
+        }, 0) // AFter one miliseconds, call this function
+        // EVENT BUBBLING AND CAPTURING
+        // Event Triggering: click trigged child, initiating the event propagation
+        // Event Capturing: In the capturing phase, event propagats from the root of DOM down to target
+        // Event Bubbling: After reaching target element(child) -> enter bubbling phases, propagating back throgh DOM tree to parent
+        // Listener Behavior: Attached to both parent and child elements using addEventListener
+        
+        // When child is clicked, it also call parent, to stop, use func.stopPropagation()
+    </script>
+</body>
+</html>

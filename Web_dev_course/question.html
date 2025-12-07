@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--Build a Survey Form using HTML-->
+<!--What You Need to Build:
+Survey Form Interface: Design a clean and structured form where users can input their responses using text fields, checkboxes, and radio buttons.
+User-Friendly Structure: Organize the form so that it is easy to fill out and understand.
+Data Collection Setup: Include fields that collect meaningful user data, such as name, age, preferences, and feedback.
+Responsive Tags: Use proper HTML semantics to ensure your form works well across different screen sizes (no styling needed at this stage).-->
+<html>
+    <head>
+        <title>SurveyForm(PersonalProject)</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* Styling the Body element */
+            body {
+                background-color: lightcoral;
+                font-family: Verdana;
+                text-align: center;
+            }
+            /* Styling the Form */
+            form {
+                background-color: #fff;
+                max-width: 500px;
+                margin: 50px auto;
+                padding: 30px 20px;
+                box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+            }
+            /* Styling .form-control */
+            .form-control {
+                text-align: left;
+                margin-bottom: 25px;
+            }
+            /* Styling .form-control label */
+            .form-control label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            /* Styling .form-control input, select, textarea */
+            .form-control input,
+            .form-control select,
+            .form-control textarea {
+                border: 1px solid #777;
+                border-radius: 2px;
+                font-family: inherit;
+                padding: 10px;
+                display: block;
+                width: 95%;
+            }
+            /* Styling Radio button and Checkbox */
+            .form-control input[type="radio"],
+            .form-control input[type="checkbox"] {
+                display: inline-block;
+                width: auto;
+            }
+            /* Styling Button */
+            button {
+                background-color: #05c46b;
+                border: 1px solid #777;
+                border-radius: 2px;
+                font-family: inherit;
+                font-size: 21px;
+                display: block;
+                width: 100%;
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+            /* Hover, selection */
+            p::selection{color:aqua}
+        </style>
+    </head>
+    <body>
+        <!--ASSIGNMENT 1: CREATE A SURVEYFORM-->
+        <form id="form">
+            <!--Personal Info-->
+            <div class="form-control">
+                <label for="name" id="label-name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" />
+            </div>
+            <div class="form-control">
+                <label for="email" id="label-email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" />
+            </div>
+            <div class=" form-control">
+                <label for="phone-num" id="label-phone-num">Phone</label>
+                <input type="tel" id="phone" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            </div>
+            <div class="form-control">
+                <label for="age" id="label-age">Age</label>
+                <input type="text" id="age" placeholder="Enter your age" min="0" max="99"/>
+            </div>
+            <div class="form-control">
+                <label for="birthdate" id="label-birthdate">Birthday</label>
+                <input type="date">
+            </div>
+            <!--Occupation-->
+            <div class="form-control">
+                <label for="role" id="label-role">Which option best describes you?</label>
+                <select name="role" id="role">
+                    <option value="student">Student</option>
+                    <option value="intern">Intern</option>
+                    <option value="professional">Professional</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <!--Question1-->
+            <div class="form-control">
+                <label>Would you recommend GeeksforGeeks to a friend?</label>
+                <label for="recommed-1">
+                    <input type="radio" id="recommed-1" name="recommed">Yes
+                </label>
+                <label for="recommed-2">
+                    <input type="radio" id="recommed-2" name="recommed">No
+                </label>
+                <label for="recommed-3">
+                    <input type="radio" id="recommed-3" name="recommed">Maybe
+                </label>
+            </div>
+            <!--Question2-->
+            <div class="form-control">
+                <label>Languages and Frameworks known
+                    <small>(Check all that apply)</small>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox" name="inp">C
+                </label>
+                <label for="inp-2">
+                    <input type="checkbox" name="inp">C++
+                </label>
+                <label for="inp-3">
+                    <input type="checkbox" name="inp">C#
+                </label>
+                <label for="inp-4">
+                    <input type="checkbox" name="inp">Java
+                </label>
+                <label for="inp-5">
+                    <input type="checkbox" name="inp">Python
+                </label>
+                <label for="inp-6">
+                    <input type="checkbox" name="inp">JavaScript
+                </label>
+                <label for="inp-7">
+                    <input type="checkbox" name="inp">React
+                </label>
+                <label for="inp-8">
+                    <input type="checkbox" name="inp">Angular
+                </label>
+                <label for="inp-9">
+                    <input type="checkbox" name="inp">Django
+                </label>
+                <label for="inp-10">
+                    <input type="checkbox" name="inp">Spring
+                </label>
+            </div>
+            <!--Comments-->
+            <div class="form-control"> 
+                <label for = 'comment'>Any comments or suggestions</label>
+                <textarea name="comment" id="comment" placeholder="Comment here" height="4px"></textarea>
+            </div><br><br>
+            <!--Submit Button-->
+            <button type="submit" value="submit">Submit</button>
+        </form> <br><br><br>
+        
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="'en">
+    <head>
+        <meta charset="UFT-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+        <meta http-equiv="X-UA Compatible" content="ie=edge">
+        <title>Portfolio</title>
+        <link rel="stylesheet">
+        <style>
+            *{margin: 0; padding: 0; box-sizing: border-box;}
+            body {font-family: Arial, Helvetica, sans-serif; line-height: 1.6;
+            background-color: #f4f4f4;}
+            header{background-color: #333; color:#fff; padding: 1rem;
+            text-align: center;}
+            
+            header nav ul {list-style: none; display: flex; justify-content: center;}
+            header nav ul li {margin: 0 15px;}
+            header nav ul li a{color: #fff; text-decoration: none; font-weight: bold;}
+            header nav ul li a:hover{color:red}
+            
+            h1{margin-top: 10px}
+            section{
+                padding: 2rem; text-align: center;
+            }
+            .about, .projects , .contact{background-color:  #fff; margin: 2rem 0}
+
+            .home {background-color: #3498db; color:#fff}
+
+            .home p {font-size: 1.5rem; margin-top: 1rem;}
+
+            .projects .project {margin: 1rem 0}
+
+            footer {background-attachment: #333; color: #fff; text-align: center;
+            padding: 1rem 0; margin-top: 2rem}
+            p::selection{color:aqua}
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <!--What is the function of # in #home,...-->
+                    <li><a href="#home">Home</a></li>
+                    <li><a href='#about'>About Me</a></li>
+                    <li><a href='#projects'>Projects</a></li>
+                    <li><a href='#contact'>Contact</a></li>
+                </ul>
+            </nav>
+            <h1>Welcome to My Portfolio</h1>
+        </header>
+        <main>
+            <section id="home" class="home">
+                <h2>Hi, I'm Ngo Nhat Anh</h2>
+            </section>
+            <section id="'about" class="about">
+                <h2>About Me</h2>
+                <p id="details">
+                    <ul style="list-style-type: none; text-align: left; border: black;">
+                        <li>Birthdate: 30/10/2007</li>
+                        <li>School: Hanoi University Of Engineering and Technology</li>
+                        <li>Majoring in Information Technology</li>
+                    </ul>
+                    
+                </p>
+            </section>
+            <section id="projects" class="projects">
+                <h2>Projects</h2>
+                <div class="'project">
+                    <h3><a href="project_1.html">Project 1</a></h3>
+                    <p>Description of project 1: Color Flipper</p>
+                </div>
+                <div class="project">
+                    <h3><a href="project_2.html">Project 2</a></h3>
+                    <p>Description of project 2: </p>
+                </div>
+                <div class="project">
+                    <h3><a href="project_3.html">Project 3</a></h3>
+                    <p>Description of project 3: </p>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <h3>Contact</h3>
+                <p>Email: ngonhatanhly@gmail.com</p><br>
+                <p>Phone: 0392868652</p>
+            </section>
+        </main>
+        <footer>
+            <p> 2025 Ngo Nhat Anh. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,315 @@
+HTML DOM (Document Object Model)
+The HTML DOM (Document Object Model) is a structured representation of a web page that allows developers to access
+, modify, and control its content and structure using JavaScript. It powers most dynamic website interactions, 
+enabling features like real-time updates, form validation, and interactive user interfaces.
+
+The HTML Document Object Model (DOM) is a tree structure, where each HTML tag becomes a node in the hierarchy.
+At the top, the <html> tag is the root element, containing both <head> and<body> as child elements.
+These in turn have their own children, such as <title>, <div>, and nested elements like <h1>, <p>,<ul>, and<li>.
+Elements that contain other elements are labeled as container elements, while elements that do not are simply child elements.
+This hierarchy allows developers to navigate and manipulate web page content using JavaScript by traversing from parent to child and vice versa.
+What Does the HTML DOM Look Like?
+Imagine your webpage as a tree:
+
+The document is the root.
+HTML tags like <html>, <head>, and <body> are branches.
+Attributes, text, and other elements are the leaves.
+Why is DOM Required?
+The DOM is essential because:
+
+Dynamic Content Updates: Without reloading the page, the DOM allows content updates (e.g., form validation, AJAX responses).
+User Interaction: It makes your webpage interactive (e.g., responding to button clicks, form submissions).
+Flexibility: Developers can add, modify, or remove elements and styles in real-time.
+Cross-Platform Compatibility: It provides a standard way for scripts to interact with web documents, ensuring browser compatibility.
+How the DOM Works?
+The DOM connects your webpage to JavaScript, allowing you to:
+
+Access elements (like finding an <h1> tag).
+Modify content (like changing the text of a <p> tag).
+React to events (like a button click).
+Create or remove elements dynamically.
+Types of DOM
+The DOM is seperated into 3 parts:
+
+Core DOM: It is standard model for all document types(All DOM implementations must support the interfaces listed as "fundamental" in the code specifications).
+XML DOM: It is standard model for XML Documents( as the name suggests, all XML elements can be accessed through the XML DOM .)
+HTML DOM: It is standard model for HTML documents (The HTML DOM is a standard for how to get, change, add, or delete HTML elements.)
+Properties of the DOM
+Node-Based: Everything in the DOM is represented as a node (e.g., element nodes, text nodes, attribute nodes).
+Hierarchical: The DOM has a parent-child relationship, forming a tree structure.
+Live: Changes made to the DOM using JavaScript are immediately reflected on the web page.
+Platform-Independent: It works across different platforms, browsers, and programming languages.
+The Document
+The Document the interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. The DOM includes elements such as <body> and <table> etc. as nodes. It provides various functionality globally to the document, for example how to obtain the page's URL or create new elements in the document.
+HTML documents served with the "text/html" content-type, also implement the HTMLDocument interface, whereas XML and SVG documents implement the XMLDocument interface.
+
+The Window (BOM)
+Before getting into the window object, let’s talk briefly about another concept, BOM. The Browser Object Model (BOM) allows JavaScript to “talk to” the browser. Even though there are no official standards for the Browser Object Model (BOM), modern browsers have implemented (almost) the same methods and properties for JavaScript interactivity.
+
+Now, the window object basically represents the browser window.
+All global JavaScript objects, functions, and variables automatically become members of the window object.
+Even the document object (of the HTML DOM) is a property of the window object.
+window.document.getElementById(“header”);
+
+The Object
+All of the properties, methods, and events available for manipulating and creating web pages are organized into objects inside dom (for example, the document is itself an object that represents the document itself, the table an object that implements the special HTMLTableElement DOM interface for accessing HTML tables, and so forth).
+
+The modern DOM is built using multiple APIs that work together.
+The core DOM defines the objects that fundamentally describe a document and the objects within it.
+This is enhanced and expanded upon need.
+For example, the HTML DOM API adds support for representing HTML documents to the core DOM.
+The Interface
+In the HTML DOM, an interface is like a blueprint that defines the properties and methods available for different types of elements. For example, a<table> element uses the HTMLTableElement interface, which gives it special table-specific methods like insertRow(). Most elements inherit features from more general interfaces like Element and Node, allowing you to interact with them easily using JavaScript.
+It shows how different types of HTML elements are related through interfaces, from general to more specific:
+
+EventTarget is the base interface from which most DOM nodes inherit. It allows elements to listen for and respond to events.
+Node extends EventTarget and represents any single point in the document tree—such as elements, text, or comments.
+Document is a specialized type of Node that acts as the entry point to the entire DOM tree (i.e., the web page).
+HTMLElement extends Node and represents any HTML element (like <div>, <p>, etc.).
+HTMLTableElement is a more specific type of HTMLElement tailored for <table> elements, giving it extra table-related methods like insertRow().
+Note: The HTMLTableElement interface provides special properties and methods (beyond the regular HTMLElement object interface it also has available to it by inheritance) for manipulating the layout and presentation of tables in an HTML document.
+
+Accessing data from DOM
+JavaScript uses the DOM to access the document and its elements in the webpage using the API for the document or window .
+
+For example, the standard DOM specifies that the getEle
+Similarly, we can also access HTML elements by:
+
+id : var x = document.getElementById(“intro”); (Only one element gets returned with this method)
+class name: var x = document.getElementsByClassName(“intro”);
+CSS selectors: var x = document.querySelectorAll(“p.intro”);
+HTML elements by HTML object collections:
+document.anchors.length;
+document.forms.length;
+document.images.length;
+document.links.length;
+document.scripts.length;
+DOM Data Types
+When working with the DOM (Document Object Model), there are different types of data or building blocks used behind the scenes. Here’s what they mean in everyday terms:
+
+Document: Think of it as the entire webpage. It's like the starting point or the big box that holds everything you see on a website.
+Node: Anything on the webpage—like a heading, paragraph, image, or even some hidden parts—is called a node. It’s like a small part or piece of the whole page.
+Element: This is a specific type of node. It represents actual tags you write in HTML, like <div>, <p>, or <img>. These are the visible parts of the page.
+NodeList: Imagine you ask the page to give you all the buttons or all the paragraphs—it gives you a list of those items. That list is called a NodeList. It's like a group of nodes stored together.
+
+
+
+BASIC:
+<!--
+A CMS(Content Management System) helps companies easily create, edit, manage, and publish content(like websites, bloas, or landing pages)
+without needing to code every 
+Web Hosting: what makes your website visible on the internet. It stores your website's files on special computers called servers and delivers them to visitors when they type
+in domain name
+DNS: A hierarchical and distributed naming system that translates domain names into IP addresses. Eg: type <www class="geeksforgeeks org"></www> -> to correct server by resolving the domain
+to its corresponding IP 
+-->
+<!-- <br>: break ---- <<hr>: horizontal line
+Table Structure: in <table>
+<tr> : table row   <th> table header     <td> table data     <caption>: provide a title or discirption for the entire table
+>       <thead>: defines the header section of a table
+    <tbody>: represent the main content area of a table, often containing column labe;
+    <tfoot>: footer section of a table ( summaries or totals)
+    <col>: defines attributes for table columns -> applied multiple columns simultaneously
+    <colgroup>: group together a set of a columns
+List Structure:
+<ol>: ordered list <ul>: unordered list <li> listdata
+    <dl>: defines a description list
+        <dt>: a term of dl
+        <dd>: details the term in a dl
+HTML BLOCK ELEMENTS:
+<address>;<blockquote>;<dd>;<div>;<dl>;<dt>;<canvas>;<form>;<heading>;<hr><li><main><nav>
+    <noscript><ol><pre><section><tfoot><ul><table><p><video><aside><article><figcaption><fieldset>
+        <figure><footer><header>
+HTML INLINE ELEMENTS:
+<br><button><time><tt><var><a><abbr><acronym><b><cite><code><dfn><em><i><output>
+<q><samp><script><select><small><span><strong><sub><sup><textarea><bdo><big><img>
+<input><kbd><label><map><object>
+HTML TAG
+<abbreviation> -> the abbreviation tag in HTMl is used to define abbreviation or short form of an element
+HTML ENTITIES:
+---Display special character---
+<: &lt; - >: &gt; - ampersand: &amp; - copyright symbol: &copy; - registered: &reg; - non-breaking space: &nbrp;
+-->
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <meta charset="UFT-8">
+        <meta name="'viewpoint" content="=width=device-width, initial-scale = 1, 0">
+        
+        <title> HTML </title>
+        <style>
+            body {
+                content-visibility: visible; content: icon; color: black;
+            }
+            h1 {
+                color: green; color: hsl(130, 100%, 50%)
+            }
+            h2 {
+                color: rgb(rgb(153, 30, 30), rgb(75, 192, 75), rgb(17, 17, 138))
+                
+            }
+            span{
+                color: red
+            }
+        
+            form {
+                width: 400px; background-color: aqua; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px;
+            }
+            fieldset {
+                border: 1px solid black; padding: 10px; margin: 0
+            }
+            legend {
+                font-weight: bold; margin-bottom: 5px;
+            }
+            input[type = 'text'], input[type = 'email'], input[type = 'password'], input[type = 'date'] {
+                width: calc(100% - 20px); padding: 8px;
+                margin-bottom: 10px; box-sizing: border-box; border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 style="color: green">
+            Hello Geeks <br>
+            <hr>
+        </h1>
+        <h2>HTML Table</h2>
+            <table style="width: 10; display: block; height: auto;">
+                <caption>
+                    I love you
+                </caption>
+                <thead>
+                    This is header
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            Firstname
+                        </th>
+                        <th>
+                            Age
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Anna
+                        </td>
+                        <td>
+                            18
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <h2>Unordered and Ordered list</h2>
+            <ul aria-setsize="10" >
+                <li>This is unordered</li>
+            </ul>
+            <ol start="5">
+                <li>This is ordered</li>
+            </ol>
+        <h2>Description List</h2>
+            <dl>
+                <dt>
+                    Milk
+                </dt>
+                <dd>
+                    A drink
+                </dd>
+            </dl>
+        <h2> HTML Forms</h2>
+            <form>
+                <label for="'username">Username: </label>
+                <input type = 'text' id="'username" name = 'username'> <br>
+                <label for = password>Password: </label>
+                <input type = 'password' id = 'password' name = 'password'> <br>
+                <input type = 'submit' value = 'Submit'>
+            </form>
+        <div>GeeksforGeeks</div>
+        <div>
+            Checkout the GeeksforGeeks
+            <a href="www.youtube.com" alt="GeeksforGeeks youtube"> official </a>
+            youtube for the videos on various courses.
+        </div>
+        <h1> Geeks<span>for</span>Geeks</h1>
+        <img src = "https://media.geeksforgeeks.org/wp.content/uploads/geek.png" alt = "My Image" style = 'width: 400px'>
+    </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+    <!--Transformations 2D, 3D Position Rotate--> 
+    <!--CSS Animation: change appearance and bahavior of various elements in web pages-->
+    <!--The Keyframes are the foundations with the help of which CSS Animations works. They define 
+    the display of the animation at the respective stages of its whole duration.-->
+    <!--animation-delay: delay the time animation occur
+        animation-iteration-count: how many times animations repeat-->
+    <!--animation-direction: normal(played foward), reserve(play backward), alternate(play foward first then backward)
+        alternate-reverse
+        
+        animation-fill-mode: none foward(retain the same animation properties after the animation is completed)
+        backwards: get the properties of first keyframe before the start of the animation, both: both fowards and backwards-->
+    <head>
+        <title>CSS Transition Property</title>
+        <style>
+            h1 { color: green; text-align: center;}
+            div.one{height: 150px; width:150px; border: 1px, dashed black; margin: 0 auto; background: #FFEBEE}
+            div.one:hover{
+                height: 300px; width: 300px; background: #BBDEFB;}
+            #gfg {animation-name: color; animation-duration: 25s; padding-top: 30px; padding-bottom: 30px; font-family:Times New Roman; }
+            #geeks {font-size: 40px; text-align: center; font-weight: bold; color: #090;
+            padding-bottom: 5px}
+            #geeks1 {font-size: 17px; font-weight:bold; text-align:center;animation-delay: 10s;}
+            @keyframes color { 0% {background-color: red} 50%{background-color: orange} 100%{background-color: brown} }               
+            #gfg1{animation-name: text; animation-duration: 5s; animation-iteration-count: infinite}
+            #geek1 {font-size: 40px; text-align: center; font-weight: bold; color: #090;padding-bottom: 5px;}
+            #geek2{font-size: 17px; font-weight: bold; text-align: center;}
+            @keyframes text {from{margin-top: 400px;} to {margin-top: 0px;}}
+            .geeks {font-size: 40px; text-align: center; font-weight: bold; color: #090; padding-bottom: 5px;
+            font-family: 'Times New Roman', Times, serif;}
+            .geeks1 {font-size: 17px; font-weight: bold; text-align: center; font-family: 'Times New Roman', Times, serif;}
+            h2{width: 350px; animation-name: text1; animation-duration: 4s; animation-iteration-count: infinite; background-color: rgb(255, 210, 85);}
+            #one{animation-timing-function: ease;}
+            #two{animation-timing-function: linear;}
+            #three{animation-timing-function: ease-in;}
+            #four{animation-timing-function: ease-out;}
+            #five{animation-timing-function: ease-in-out;}
+            @keyframes text1 {
+                from{margin-left: 60%;} to {margin-left: 0%;}
+            }
+
+            #g4g {width: 400px; height: 100px; position: relative;
+            animation-name: GFG; animation-duration: 5s; animation-timing-function: linear; animation-delay: 1s; 
+            animation-iteration-count: infinite; animation-direction: alternate;}
+            @keyframes GFG{
+                0% {left: 0px; top: 0px}
+                25% {left: 200px; top: 200px}
+                50% {left: 200px; top: 0px}
+                75% {left: 0px; top: 200px}
+                100%{left:0px; top: 0px}
+            }            
+
+        </style>
+    </head>
+    <body>
+        <h1>GeeksforGeeks</h1>
+        <div class = "one"></div>
+        <div id = 'gfg'>
+            <div id='geeks'>GeeksforGeeks</div>
+            <div id='geeks1'>A computer sciece portal</div>
+        </div>
+        <div id="'gfg1">
+            <div id="geek1">GeeksforGeeks</div>
+            <div id="geek2">A computer science portal for geeks</div>
+        </div>
+        <div class="geeks1">A computer science portal for geeks</div>
+        <h2 id="'one">This text is ease</h2>
+        <h2 id="two">This text is linear</h2>
+        <h2 id="three">This text is ease-in</h2>
+        <h2 id="'four">This text is ease-out</h2>
+        <h2 id="five">This text is ease-in-out</h2>
+
+        <h1 id="g4g">Hello</h1>
+    </body>
+</html>

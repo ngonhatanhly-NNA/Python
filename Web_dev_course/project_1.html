@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1: Color Flipper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+        body{
+            margin: 10px;
+            padding: 10px;
+            
+        }
+        h3{
+            margin:10px;
+            padding: 10px;
+            font-size: xx-large;
+            font-family:Georgia, 'Times New Roman', Times, serif ;
+            display: flex;
+            color: hsl(0, 78%, 51%)
+        }
+        button{
+            height: 50px;
+            width: 200px;
+            background-color: hsl(251, 41%, 67%);
+            box-shadow: rgb(156, 30, 16);
+            align-items: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color:aliceblue;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 20px
+        }
+        button:hover{
+            background-color: hsl(251, 41%, 57%);
+            color: white;   
+        }
+        button:active{
+            color:red
+        }
+        #colorFlipper{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-style: dashed;
+            background-color: antiquewhite;
+            flex-direction: column;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="colorFlipper">
+        <h3>Color Flipper</h3>
+        <button onclick="changeColor()">Flip Color</button>
+    </div>
+    <script>
+        function changeColor(){
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+            let color = "rgb(" + red + "," + green + "," + blue + ")";
+            document.getElementById("colorFlipper").style.backgroundColor = color;
+        }
+        function textColor(){
+            
+        }
+    </script>
+</body>
+</html>
